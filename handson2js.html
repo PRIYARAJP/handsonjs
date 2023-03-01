@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision Making</title>
+    <style>
+        .dec{
+            font-style: italic;
+            text-align: center;
+        }
+        pre{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="dec">Decision Making</h1>
+    <h1>Q1 - Calculator</h1>
+    <pre>
+        const Calculator = (A, B, C) => 
+        {
+            
+        switch(A){
+            case "+":
+            return(B + C);
+            case "-":
+            return(B - C);
+            case "*":
+            return(B * C);
+            case "/":
+            return(B / C);
+        }
+            
+        };
+
+    </pre>
+    <h1>Q2 - Check whether the condition is fulfilled or not?</h1>
+    <pre>        
+        const Check_divisibility = (N) => {
+            if (N % 6 === 0 && N % 9 === 0) {
+                    return `Divisible by both`;
+                    } else {
+                    return `Not Divisible by both`;
+                    } 
+        };
+    </pre>
+    <h1>Q3 - Eligible Voter</h1>
+    <pre>
+        const isEligible = (a) => {
+            if(a>17)
+            {
+              return("Eligible for Voting");
+            }
+            else
+            {
+              return("Not Eligible for Voting");
+            }
+        };
+        
+    </pre>
+    <h1>Q4 - Find Relation</h1>
+    <pre>
+        const findRelation = (x,y) => {
+            if(x<y){
+              return (x+" is smaller than " +y);
+            }
+            else if (x>y){
+              return (x+" is greater than " +y);
+            }
+            else{
+              return (x+" is equal to " +y);
+            }
+        };
+    </pre>
+    <h1>Q5 - Find Grades</h1>
+    <pre>
+        const findGrades = (a) => {
+            switch (true) {
+                       case a <= 10:
+                         return 'E';
+                       case a <= 20:
+                         return 'D';
+                       case a <= 30:
+                         return 'C';
+                       case a <= 40:
+                         return 'B';
+                       case a <= 50:
+                         return 'A';
+                       default:
+                         return 'Invalid marks';
+                     }
+       };
+    </pre>
+    <h1>Q6 - Get Value</h1>
+    <pre>
+        const getValue = (a) => {
+            if(a==='P' || a==='p'){
+                        return 'PrepBytes';
+                      }
+                      else if(a==='Z' || a==='z'){
+                        return 'Zenith';
+                      }
+                      else if(a==='E' || a==='e'){
+                        return 'Expert Coder';
+                      }
+                      else if(a==='D' || a==='d'){
+                        return 'Data Structure';
+                      }
+                      
+         };
+    </pre>
+    <h1>Q7 - Find the maximum out of three numbers.</h1>
+    <pre>
+        const Max_out_of_three = (A,B,C) => {
+            let max = A;
+                   if (B > max) {
+                     max = B;
+                   }
+                   if (C > max) {
+                     max = C;
+                   }
+                   if (A === B && B === C) {
+                     return -1;
+                   } else {
+                     return max;
+                   }
+       
+       };
+       
+    </pre>
+    <h1>Q8 - Second Smallest</h1>
+    <pre>
+        const findSndSmallest = (x,y,z) => {
+            const sorted = [x, y, z].sort((a, b) => a - b);
+                   return sorted[1];
+       };
+    </pre>
+    <h1>Q9 - Check whether the triangle is Acute or Obtuse</h1>
+    <pre>
+        const Triangle_Check = (A,B,C) => {
+            if (A + B + C === 180) {            
+                        if (A < 90 && B < 90 && C < 90) {
+                          return 'acute';            
+                        } else {            
+                          return 'obtuse';            
+                        }            
+                      } else {            
+                        return 'The triangle is invalid';            
+                      } 
+        
+            
+        };
+        
+    </pre>
+</body>
+</html>
