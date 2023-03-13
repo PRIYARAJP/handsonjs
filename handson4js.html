@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays--HANDSON4-JS</title>
+    <style>
+        .dec{
+            font-style: italic;
+            text-align: center;
+        }
+        pre{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="dec">Arrays</h1>
+    <h1>Q1 - Find the Product.</h1>
+    <pre>
+        
+        const Find_Prod = (array, N) => 
+        {
+        let a=1;
+        for (i=0;i<=N;i++){
+        a = a*array[i];
+        }
+        return a;
+        };
+    </pre>
+    <h1>Q2 - Find the Sum.</h1>
+    <pre>
+        const Find_Sum = (array, N) => 
+        {
+        let a=0;
+        for (i=0;i<=N;i++){
+        a = a+array[i];
+        }
+        return a;
+
+        }
+    </pre>
+    <h1>Q3 - Count Occurrences</h1>
+    <pre>
+        const findCount = (N, K, Arr) => 
+        {
+            let a=0;
+            for (let i=0;i<=N-1;i++){
+            if(Arr[i]===K){
+                a++;
+            }
+            }
+            return a;
+        };
+    </pre>
+    <h1>Q4 - Even Odd</h1>
+    <pre>
+        const findEvenOdd = (N, Arr) => 
+        {
+        let O = 0;
+                        let E = 0;
+                        for(let i=0; i<=N; i++){ 
+                        if(Arr[i]%2===0){ 
+                            E += Arr[i];
+                        }
+                        else{
+                            O += Arr[i]; 
+                        }
+                        }
+                        return [E, O];
+        };
+    </pre>
+    <h1>Q5 - Find whether the number is present or not</h1>
+    <pre>
+        const Find_Num = (array,N,M) => 
+        {
+        for(let i=0; i<=N; i++){
+                        if(array[i]===M){
+                        return "YES";
+                        }
+                        
+                    }
+                    return "NO"; 
+        };
+    </pre>
+    <h1>Q6 - Higher Age</h1>
+    <pre>
+        const highAge = (N, Arr) => 
+        {
+            const a =[];
+                        for(let J in Arr){
+                        if(Arr[J]>=18){
+                            a.push(Arr[J]);
+                        }
+                        }
+                        return a; 
+        };
+ 
+    </pre>
+    <h1>Q7 - Increment the Array Elements</h1>
+    <pre>
+        
+        const Inc_Arr = (array,N) => 
+        {
+        let inc = array.map(I => I + 1);
+            console.log(inc.join(" "));  
+
+        };
+    </pre>
+    <h1>Q8 - Pass or Fail</h1>
+    <pre>
+        const isAllPass = (N, Arr) => 
+        {
+        for(let j=0;j<=100;j++ ){
+        if(Arr[j]>=32){
+                            return "YES";
+                        }
+                        else{
+                            return "NO";
+                        }
+                        }
+        };
+ 
+    </pre>
+    <h1>Q9 - Unique Color Shirt</h1>
+    <pre>
+        function Unique_Shirts (arr,N) {
+
+            let f=[];
+            for (let i=0;i<=1000;i++){
+              f[i]=0;
+            }
+            for (let i=0;i<=1000;i++){
+              f[arr[i]]++;
+            }
+             let a=0;
+             for (let i=0;i<=1000;i++){
+             if(  f[i]===1){
+               a++;
+             }
+            }
+             return a;
+            }
+    </pre>
+    <h1>Q10 - Min and Max</h1>
+    <pre>
+                
+        function arrayMin(arr) {
+            let mi = arr[0];
+                    for (let i = 1; i < arr.length; i++) {
+                        if (arr[i] < mi) {
+                        mi= arr[i];
+                        }
+                        
+                    }
+                    
+                    return mi;
+        
+        }
+        
+        function arrayMax(arr) {
+        let ma= arr[0];
+                    for (let J = 1; J < arr.length; J++) {
+                        if (arr[J] > ma) {
+                        ma = arr[J];
+                        }
+                    }
+                    return ma;
+        
+        }
+        
+    </pre>
+    <h1>Q11 - Birthday Game</h1>
+    <pre>
+                
+        function Birthday_Game(arr,D ,M) {
+            let B= 0;
+                        for (let i = 0; i <= arr.length - M; i++) {
+                            let O= 0;
+                            for (let j = i; j < i + M; j++) {
+                                O += arr[j]; 
+                            }
+                            if (O === D) {
+                                B++;
+                            }
+                        }
+                        return B;
+        
+        }
+    </pre>
+  
+</body>
+</html>
