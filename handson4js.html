@@ -110,16 +110,23 @@
     </pre>
     <h1>Q8 - Pass or Fail</h1>
     <pre>
+        
         const isAllPass = (N, Arr) => 
         {
-        for(let j=0;j<=100;j++ ){
-        if(Arr[j]>=32){
+
+          let r=0;
+              for(let j=0;j<N;j++ ){
+          if(Arr[j]<32){
+            r++
+          }
+          }
+            if(r===0){
                             return "YES";
-                        }
-                        else{
-                            return "NO";
-                        }
-                        }
+                          }
+           else{
+              return "NO";
+           }
+
         };
  
     </pre>
