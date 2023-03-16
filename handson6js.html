@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem Solving--HANDSON6JS</title>
+    <style>
+        .dec{
+            font-style: italic;
+            text-align: center;
+        }
+        pre{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="dec">String</h1>  
+    <h1>Q1 - Find the Smaller Angle</h1>
+    <pre>
+        var Minimal_Angle = (h, m) => 
+        {
+              let hour = (h % 12) * 30 + m / 2;
+              let minute = m * 6;
+              let aDiff = Math.abs(hour - minute);
+              let a = Math.min(aDiff, 360 - aDiff);
+              return a;   
+        };
+    </pre>
+    <h1>Q2 - Check whether the year is Leap year or not.</h1>
+    <pre>
+        var Check_Leap = (year) => 
+        {
+               if (year % 4 === 0) {
+                if (year % 100 === 0 && year % 400 !== 0) {
+                  return "Non Leap Year";
+                } else {                 
+                  return "Leap Year";
+                }
+              } else {               
+                return "Non Leap Year";
+              }
+  
+
+        };
+    </pre>
+    <h1>Q3 - Perfect Number Check.</h1>
+    <pre>         
+        var Perfect_Check = (N) => 
+        {
+              let Check = 0;
+              let heard = 1;
+              while(N>=heard) {
+               if (N % heard === 0) {
+                 Check += heard;
+                }
+                heard++;
+              }
+              if (Check === N) {
+                return "YES";
+              } else {
+                return "NO";
+              }    
+        
+        };
+    </pre>
+    <h1>Q4 - Reverse a Number.</h1>
+    <pre>
+        var Reverse_Number = (N) => 
+        {
+        let reverse = 0;
+        while (N > 0) {
+            let R = N % 10;
+            reverse = reverse * 10 + R;
+            N = Math.floor(N / 10);
+        }
+        return reverse;
+
+        };
+    </pre>
+    <h1>Q5 - Substring Check.</h1>
+    <pre>
+        var Substring_Check = (S1, S2) => 
+        {
+            if (S1.includes(S2)) 
+            {
+                return "YES";
+            } 
+            else 
+            {
+                return "NO";
+            }     
+        };
+    </pre>
+</body>
+</html>
