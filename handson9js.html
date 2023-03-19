@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array of objects</title>
+    <style>
+        .dec{
+            font-style: italic;
+            text-align: center;
+        }
+        pre{
+            font-size: 30px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="dec">Array of objects</h1>  
+    <h1>QUESTION</h1>
+    <pre>
+
+let studentRecords = [ 
+{name: 'John', id: 123, marks : 98 },
+{name: 'Baba', id: 101, marks : 23 },
+{name: 'yaga', id: 200, marks : 45 },
+{name: 'Wick', id: 115, marks : 75 } ]
+    </pre>
+    <h1>QUESTION1-We are interested in retrieving only the students' names; all the names should be in caps.
+<br>
+        ['JOHN', 'BABA', 'YAGA', 'WICK']</h1>
+
+
+    <pre>
+
+    let QN1=[];
+    for(let i=0;i< studentRecords.length;i++){
+      QN1.push(studentRecords[i].name.toUpperCase());
+    }
+    console.log(QN1);
+
+    </pre>
+
+<h1>QUESTION2-	Suppose we have the same dataset as above but this time we want to get the details of students who scored more than 50 marks.
+
+    [{name: 'John', id: 123, marks: 98 },{name: 'Wick', id: 115, marks: 75 }]</h1>
+<pre>
+
+    let QN2=[];
+    for(let i=0;i< studentRecords.length;i++){
+        if(studentRecords[i].marks>50){
+        QN2.push(studentRecords[i]);
+        }
+    }
+    console.log(QN2);
+
+</pre>
+<h1>QUESTION3-	Retrieve the details of students who scored more than 50 marks and have IDs greater than 120.</h1>
+<pre>
+
+    let QN3=[];
+    for(let i=0;i< studentRecords.length;i++){
+        if(studentRecords[i].marks>50 && studentRecords[i].id>120){
+            QN3.push(studentRecords[i]);
+        }
+    }
+    console.log(QN3);
+
+</pre>
+    <h1>QUESTION4-	Consider the same scenario we have discussed above, but this time we would like to know the sum total of the marks of the students</h1>
+    <pre>
+
+    let QN4=0;
+    for(let i=0;i< studentRecords.length;i++){
+      QN4+=studentRecords[i].marks;
+    }
+    console.log(QN4);
+
+    </pre>
+    <h1>QUESTION5-This time we want to get only the names of the students who scored more than 50 marks from the same dataset used above.</h1>
+    <pre>
+    let QN5=[];
+    for(let i=0;i< studentRecords.length;i++){
+        if(studentRecords[i].marks>50){
+            QN5.push(studentRecords[i].name);
+        }
+    }
+    console.log(QN5);
+
+    </pre>
+    
+    <h1>QUESTION6-This time we are required to print the sum of marks of the students with id > 120.</h1>
+    <pre>
+    
+    let QN6=0;
+    for(let i=0;i< studentRecords.length;i++){
+        if(studentRecords[i].id>120){
+            QN6+=studentRecords[i].id;
+          }
+    }
+    console.log(QN6);
+
+    </pre>
+    <h1>QUESTION7- This time we are required to print the total marks of the students with marks greater than 50 after a grace of 15 marks has been added to those students who scored less than 50.</h1>
+    <pre>
+    
+    let OP1=0;
+    let OP2=0;
+    let QN7=0;
+    for(let i=0;i< studentRecords.length;i++){
+      if(studentRecords[i].marks>50){
+            OP1+=studentRecords[i].marks;
+
+          }
+        if(studentRecords[i].marks< 50){   
+            OP2+=studentRecords[i].marks+=15;
+        }
+         
+    }
+    QN7=OP1+OP2;
+    console.log(QN7);
+    </pre>
+    <h1>QUESTION8-Create 6 objects , each object will have name, class, roll no as properties. Store these objects in an array of objects.</h1>
+    <pre>
+    
+    let students = [ 
+    object1={name: 'JOSAN', class: 1, rollno: 1 },
+    object2= {name: 'SANJAY', class: 2, rollno: 4 },
+    object3= {name: 'RIYA', class: 3, rollno: 6 },
+    object4= {name: 'RAJ', class: 4, rollno: 8 },
+    object5= {name: 'SANGEETHA', class: 5, rollno: 5 },
+    object6= {name: 'KIS', class: 6, rollno: 2 }]     
+    console.log(students);
+    </pre>
+    <h1>If we want assign object</h1>
+
+    <pre>
+    let an=Object.assign (studentRecords,{
+      object1:{name: 'JOSAN', class: 1, rollno: 1 },
+      object2:{name: 'SANJAY', class: 2, rollno: 4 },
+      object3: {name: 'RIYA', class: 3, rollno: 6 },
+      object4:{name: 'RAJ', class: 4, rollno: 8 },
+      object5:{name: 'SANGEETHA', class: 5, rollno: 5 },
+      object6:{name: 'KIS', class: 6, rollno: 2 }})   
+      console.log(an);
+    </pre>
+      
+   
+      
+
+            
+    </pre>
+</body>
+</html>
