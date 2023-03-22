@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing</title>
+    <style>
+        body{
+            background-color: aqua;
+            width: 25cm;
+        }
+        .top{
+            display: flex;
+            justify-content: space-between;
+            align-content: baseline;
+        }
+        .playagain{
+            width: 200px;
+            height: 70px;
+            font-size: 25px;
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .lefts{
+            width: 300px;
+            font-size: 30px;
+            left: 1230px;
+            position: absolute;
+            right: 30px;
+            top: 30px;
+        }
+        .titgus{
+            width: 300px;
+            position: absolute;
+            left: 600px;
+            top: 100px;
+            margin-top: 50px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+       
+        .qn{
+            width: 150px;
+            padding: 10px;
+            margin: 20px;
+            text-align: center;
+            font-size: 65px;
+            font-weight: bold;
+            border: 4px solid cadetblue;
+            background-color: cadetblue;
+            position: absolute;
+            top: 185px;
+            left: 630px;
+        }
+        .hr1{
+            border-top: 6px solid cadetblue ;
+            width: 40cm;
+            position: absolute;
+            top: 250px;
+            
+        }
+       
+        .checks{
+
+            width: 150px;
+            text-align: center;
+            position: absolute;
+            left: 150px;
+            top: 530px;
+            font-family: 'Times New Roman', Times, serif;
+           
+            padding: 10px;
+            font-size: 30px;
+   
+        }
+        .star{
+            width: 300px;
+            font-size: 30px;
+            position: absolute;
+            top: 350px;
+            left: 1000px;
+            font-weight: 900;
+            font-size: 40px;
+        }
+        .hon{
+            width: 300px;
+            font-size: 20px;
+            position: absolute;
+            top: 430px;
+            left: 1025px;
+            padding: 10px;
+        }
+        .scores{
+            width: 300px;
+            font-size: 20px;
+            position: absolute;
+            top: 480px;
+            left: 1030px;
+            padding: 10px;
+        }
+        input[type="number" ] {
+            width: 400px;
+            height: 150px;
+            border: 6px solid cadetblue;
+            position: absolute;
+            left: 100px;
+            top: 400px;
+            font-size: 40px; 
+            width: 200px;
+            height: 60px; 
+            background-color: transparent;
+            text-align: center;
+             
+        }
+        
+    </style>
+</head>
+<body>
+    <nav class="top">
+    <button class="playagain btn again"  onclick="reloadgame()">Play Again</button>
+    <nav class="lefts">(Between 1 and 100)</nav>
+</nav>
+<nav class="titgus">Guess My Number!</nav>
+
+<nav class="hr1"></nav>
+<nav class="qn  number">?</nav>
+
+<nav class="left">
+<nav class="box"><input type="number" class="guess" id="guessid"></nav>
+<button class="checks" class="btn check" onclick="maincheck()">Check!</button>
+</nav>
+<nav class="star message"  id="sc">Start guessing...</nav>
+<p class="label-score hon">💯 Chances: <span class="score">100</span></p>
+<p class="label-highscore scores">
+    🥇 Highscore: <span class="highscore">0</span>
+  </p>
+
+</nav>
+<script src="./domyoutube.js">
+    
+</script>
+</body>
+</html>
