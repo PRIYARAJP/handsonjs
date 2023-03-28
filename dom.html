@@ -36,6 +36,7 @@
     <br>
     <fieldset><legend>ANS-1</legend>
     <pre>
+    &lt;H1 id="te">Hiii&lt;/H1>
     &lt;div id="text"&gt;
     💐🌷🌹Welcome to my page Enter
      Submit 💐🌷🌹&lt;/div&gt;    
@@ -55,11 +56,12 @@
     text.innerText=newtext;
     
       }
+      document.getElementById("te").innerText="Hello"
     &lt;/script&gt;
     </pre>
 </fieldset>
 <h2>OUTPUT :</h2>
-
+    <H1 id="te">Hiii</H1>
     <div id="text"> 💐🌷🌹Welcome to my page Enter Submit 💐🌷🌹</div>    
     <br>
     <button onclick="CALLMES()">SUBMIT</button> 
@@ -75,8 +77,8 @@
      console.log(text.innerHTML);
     console.log(text.innerText);
     text.innerText=newtext;
-    
       }
+      document.getElementById("te").innerText="Hello"
     </script>
 
 <DIV class="QNS">QN2- Write the code to access element which is having id as "text"</DIV>
@@ -364,16 +366,18 @@ Change Flex Direction&lt;/button>
 </pre>
 </fieldset>
 <h2>OUTPUT :</h2>
-<h1 id="t">00:00:00</h1>
+<h1 id="timer">00:00:00</h1>
+        
             <script>
-                const timer = document.getElementById("t");
+              setInterval(function () {
+                const timer = document.getElementById("timer");
                 const now = new Date();
                 const hours = now.getHours().toString().padStart(2, "0");
                 const minutes = now.getMinutes().toString().padStart(2, "0");
                 const seconds = now.getSeconds().toString().padStart(2, "0");
                 const currentTime = hours + ":" + minutes + ":" + seconds;
                 timer.innerText = currentTime;
-          
+              }, 1000);
             </script>
             <br>
             <DIV class="QNS">QN10 </DIV>
