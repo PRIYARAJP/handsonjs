@@ -101,12 +101,27 @@
     <P>40</P>
     <h1>Q7 - Write a function that accepts parameter n and returns factorial of n</h1>
     <pre>
-        function call(n) {
-            console.log("n",n);
-            return `n ${n}`;
-          }
-          r=call(10);
-          document.getElementById("Q7").innerHTML=r;
+            
+        function factorial(n) {
+            //  console.log("n",n);
+        if(n ==0 || n== 1){
+            return 1;
+        }
+        else if (n &lt;0){
+            return "NEGATIVE VALUE IS NOT EXIST"
+        }
+        else {
+            // console.log(`${n}* ${factorial(n-1)}=${n * factorial(n-1)}`);
+            return ` ${n * factorial(n-1)}` ;
+            
+        }
+        
+        
+            
+        }
+        r=factorial(3);
+        console.log("Factorial is",r);
+        document.getElementById("Q7").innerHTML=`Factorial is ${r}`;
     </pre>
     <H2>OUTPUT</H2>
     <p id="Q7"></p>
@@ -138,7 +153,7 @@
         }
     </pre>
     <H2>OUTPUT</H2>
-    <p >ERROR (OR) 20</p>
+    <p >undefined</p>
     <h1>Q3 - </h1>
     <pre>
         Guess the output
