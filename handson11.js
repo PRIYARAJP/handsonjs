@@ -86,12 +86,26 @@
 
 ////////Qn7 =Write a function that accepts parameter n and returns factorial of n
 
-function call(n) {
-  // console.log("n",n);
-  return `n ${n}`;
+function factorial(n) {
+  //  console.log("n",n);
+if(n ==0 || n== 1){
+  return 1;
 }
-r=call(10);
-document.getElementById("Q7").innerHTML=r;
+else if (n<0){
+  return "NEGATIVE VALUE IS NOT EXIST"
+}
+else {
+  // console.log(`${n}* ${factorial(n-1)}=${n * factorial(n-1)}`);
+  return ` ${n * factorial(n-1)}` ;
+  
+}
+
+
+  
+}
+r=factorial(3);
+console.log("Factorial is",r);
+document.getElementById("Q7").innerHTML=`Factorial is ${r}`;
 
 ///////////////////////day2
 ////////////////////////Qn1
@@ -126,12 +140,12 @@ document.getElementById("Q7").innerHTML=r;
 
 ////////////////////////Qn4
 
-const greet = function(name){
-return function(m){
+// const greet = function(name){
+// return function(m){
 
-console.log(`Hi!! ${name}, ${m}`);
-}
-}
+// console.log(`Hi!! ${name}, ${m}`);
+// }
+// }
 
-const greet_message = greet('EA19');
-greet_message("Welcome To PrepBytes")
+// const greet_message = greet('EA19');
+// greet_message("Welcome To PrepBytes")
