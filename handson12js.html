@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>handson12js-Closure</title>
+    <style>
+        .dec{
+            font-style: italic;
+            text-align: center;
+        }
+        pre{
+            font-size: 30px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="dec">Closure</h1>  
+    <h1>Q1-</h1>
+    <pre>
+        function counter(){
+            var counter = 0;
+            
+            function IncreaseCounter() {
+            return counter += 1;
+            };
+            
+            return IncreaseCounter;
+            }
+            
+            var counter = counter();
+            alert(counter());
+            alert(counter());
+            alert(counter());
+            alert(counter());
+    </pre>
+    <H2>OUTPUT</H2>
+    <p >
+        1<br>
+        2<br>
+        3<br>
+        4<br>
+    </p>
+    <h1>Q2-</h1>
+    <pre>
+        let count = 0;
+        (function () {
+        if (count === 0) {
+        let count = 1;
+        console.log(count); // What is logged?
+        }
+        console.log(count); // What is logged?
+        })();
+    </pre>
+    <H2>OUTPUT</H2>
+    <p >
+        1<br>
+        0
+    </p>
+    <h1>Q3-</h1>
+    <pre>
+        for (var i = 0; i < 3; i++) {
+            setTimeout(function log() {
+            console.log(i); // What is logged?
+            }, 1000);
+            }
+    </pre>
+    <H2>OUTPUT</H2>
+    <p >
+        3<br>
+        3<br>
+        3<br>
+    </p>
+    <h1>Q4-Write a code to calculate area of a rectangle using inner function. In this case outer function should accept parameter length and inner function should accept parameter breadth.</h1>
+    <pre>
+        function length(l) {
+            function bearth(b) {
+                let a=l*b;
+                return a;
+            }
+           return bearth(4)
+            
+        }
+        console.log(length(3));
+    </pre>
+    <H2>OUTPUT</H2>
+    <p >
+        12<br>
+    </p>
+    <h1>Q5-Take a variable in outer function and create an inner function to increase the counter every time it is called</h1>
+    <pre>
+
+    </pre>
+    <H2>OUTPUT</H2>
+    <p >
+        closure <br>
+    </p>
+    <h1>Q6-</h1>
+    <pre>
+        Print Output
+
+        var a = 12;
+        (function () {
+        alert(a);
+        })();
+    </pre>
+    <H2>OUTPUT</H2>
+    <p >
+        12<br>
+    </p>
+    <h1>Q7-</h1>
+    <pre>
+        var a = 10;
+        var x = (function () {
+        var a = 12;
+        return function () {
+        alert(a);
+        };
+        })();
+        x();
+    </pre>
+    <H2>OUTPUT</H2>
+    <p >
+        12<br>
+    </p>
+    <h1>Q8-</h1>
+    <pre>
+        var globalVar = "xyz";
+
+    (function outerFunc(outerArg) {
+    var outerVar = 'a';
+
+    (function innerFunc(innerArg) {
+    var innerVar = 'b';
+
+    console.log(
+    "outerArg = " + outerArg + "\n" +
+    "innerArg = " + innerArg + "\n" +
+    "outerVar = " + outerVar + "\n" +
+    "innerVar = " + innerVar + "\n" +
+    "globalVar = " + globalVar);
+
+    })(456);
+    })(123);
+    </pre>
+    <H2>OUTPUT</H2>
+    <p >
+        outerArg = 123<br>
+        innerArg = 456<br>
+        outerVar = a<br>
+        innerVar = b<br>
+        globalVar = xyz<br>
+    </p>
+    <script src="./handson12.js"></script>
+</body>
+</html>
