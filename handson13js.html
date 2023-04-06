@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Promises, Async/ Await</title>
+    <style>
+        .dec{
+            font-style: italic;
+            text-align: center;
+        }
+        pre{
+            font-size: 15px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="dec">Promises, Async/ Await</h1>  
+    <h1>Q1 - Write one example explaining how you can write a callback function.</h1>
+    <pre>
+        function greeting(name,from, cb) {
+            console.log('HII I AM ' + name + ' AND I AM FROM '+from);
+            cb();
+          }
+          
+          function THANK() {
+            console.log('THANK YOU !!!!!!!!!!!!!');
+          }
+          greeting('PRIYADHARSHINI','SALEM', THANK);
+    </pre>
+    <H2>OUTPUT</H2>
+    <p >
+            HII I AM PRIYADHARSHINI AND I AM FROM SALEM<br>
+            THANK YOU !!!!!!!!!!!!!
+    </p>
+    <h1> Q2 - 	Write a callback function to print numbers from 1 to 7, in which 1 should be printed after 1 sec, 2 should be printed after 2 sec, 3 should be printed after 3 sec, and so on.
+
+        Explain callback hell.
+        Numbers
+        1
+        2
+        3
+        4
+        5
+        6
+        7</h1>
+    <pre>
+        delt(() => {
+            console.log('Completed by the time intervel 1s= 1000 ms!');
+          });
+          
+          function delt(cc) {
+            let i = 1;
+            let callfun = setInterval(() => {
+              console.log(i);
+              i++;
+              if (i > 7) {
+                clearInterval(callfun);
+                if (cc) {
+                  cc();
+                }
+              }
+            }, 1000);
+          }        
+    </pre>
+    <H2>OUTPUT</H2>
+    <pre>
+        1
+        2
+        3
+        4
+        5
+        6
+        7
+        Completed by the time intervel 1s= 1000 ms!
+    </pre>
+    <h1> Q3 - 	Write the promise function to print numbers from 1 to 7, in which 1 should be printed after 1 sec, 2 should be printed after 2 sec, 3 should be printed after 3 sec, and so on.
+
+        Numbers
+        1
+        2
+        3
+        4
+        5
+        6
+        7
+    </h1>
+    <pre>    
+        pnd()
+        .then(() => console.log("Completed by the time intervel respect to increasing value like 1s*our value 1s= 1000 ms!"))
+        .catch((error) => console.error(error));
+        function pnd() {
+            return new Promise((resolve, reject) => {
+            let incr = 1;
+            const id = setInterval(() => {
+                console.log(incr);
+                incr++;
+                if (incr > 7) {
+                clearInterval(id);
+                resolve();
+                }
+                else{
+                    reject;
+                }
+            
+            }, incr * 1000);
+            });
+        }   
+    </pre>
+    <H2>OUTPUT</H2>
+    <pre>
+        1
+        2
+        3
+        4
+        5
+        6
+        7
+        Completed by the time intervel respect to increasing value like 1s*our value 1s= 1000 ms!
+    </pre>
+    <h1> Q4 - 	Create a promise function accepting an argument, if yes is passed to the function then it should go to resolved state and print Promise Resolved, and if nothing is passed
+        then it should go to reject the state and catch the error and print Promise Rejected
+    </h1>
+    <pre> 
+        pf("yes")
+        // pf("no")
+        .then((result) => console.log(result))
+        .catch((error) => console.log(error));
+        function pf(passingstatement) {
+            return new Promise((resolve, reject) => {
+            if (passingstatement === "yes") {
+                resolve("Promise Resolved");
+            } else {
+                reject("Promise Rejected");
+            }
+            });
+        }   
+    </pre>
+    <H2>OUTPUT</H2>
+    <pre>
+        Promise Resolved
+
+        if we pass pf("no")
+        Promise Rejected
+
+    </pre>
+    <h1>Q5 - 	Create examples to explain callback function</h1>
+    <pre>
+        FD((data) => {
+            console.log(data);
+            console.log(data.sib); 
+            console.log(data.sib.bro); 
+          });
+         function FD(cd) {
+            setTimeout(() => {
+              let data = { name: "RIYA", age: 22 , city:"Salem",
+            sib : {
+                bro : "Nallu",
+                sis : "Ganga"
+            }};
+              cd(data);
+            }, 1000);
+          }
+    </pre>
+    <H2>OUTPUT</H2>
+    <pre>
+        { name: "RIYA", age: 22 , city:"Salem",
+        sib : {
+            bro : "Nallu",
+            sis : "Ganga"
+        }}
+        sib : {
+            bro : "Nallu",
+            sis : "Ganga"
+        }
+        Nallu
+    </pre>
+    <h1>Q6 - 	Create examples to explain callback hell function</h1>
+    <pre>     
+  op(function(data) {
+    console.log(data);  
+    op(function(data) {
+      console.log(data);  
+      op(function(data) {
+        console.log(data);
+        op(function(data) {
+            console.log(data);
+            op(function(data) {
+                console.log(data);
+                op(function(data) {
+                    console.log(data);
+                    op(function(data) {
+                        console.log(data);
+                        op(function(data) {
+                            console.log(data);
+                          });
+                      });
+                  });
+              });
+          });
+      });
+    });
+  });
+  function op(cb) {
+    setTimeout(function() {
+      cb('Data received');
+    }, 2000);
+  }
+    </pre>
+    <H2>OUTPUT</H2>
+   <pre>
+    Data received
+    Data received
+    Data received
+    Data received
+    Data received
+    Data received
+    Data received
+    Data received
+    Data received
+   </pre>
+   <h1>Q7 - 	Create examples to explain promises function</h1>
+   <pre>   
+        const MP = new Promise((resolve) => {
+            setTimeout(() => {
+            resolve("HII! EVERYONE ");
+            }, 1000);
+        });
+        
+        MP.then((message) => {
+            console.log(message); 
+        });
+   </pre>   
+   <H2>OUTPUT</H2>
+   <pre>
+        HII! EVERYONE 
+   </pre>
+   <h1>Q8 - Create examples to explain async await function</h1>
+   <pre>
+    async function myDisplay() {
+        let myPromise = new Promise(function(resolve, reject) {
+          resolve("I love You !!");
+        });
+        document.getElementById("demo").innerHTML = await myPromise;
+      }
+      
+      myDisplay()
+   </pre>
+   <h2>OUTPUT</h2>
+   <pre id="demo">HELLO EVERY ONE</pre>
+   <H1>Q9 - Create examples to explain promise.all function</H1>
+   <pre>
+    const p1 = Promise.resolve(3);
+    const p2 = 1337;
+    const p3 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("foods");
+    }, 100);
+    });
+
+    Promise.all([p1, p2, p3]).then((values) => {
+    console.log(values); // [3, 1337, "foo"]
+    });
+   </pre>
+   <h2>OUTPUT</h2>
+   <pre>[ 3, 1337, 'foods' ]</pre>
+    <script src="./handson13.js"></script>
+</body>
+</html>
