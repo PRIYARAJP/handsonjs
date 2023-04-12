@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+    <style>
+        .dec{
+            font-style: italic;
+            text-align: center;
+        }
+        pre{
+            font-size: 15px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="dec">Inheritance and Prototype</h1>  
+    <h1>Q1 - Create 2 objects - parent and child. Attach methods to parent and use those methods
+         in child object using parents prototype</h1>
+<H3>ANS</H3>
+    <pre>    
+            let a={
+              name:"riya",
+              age:"23"
+
+            };
+            function s(a){     
+              console.log(a);
+              console.log(`HII EVERY ONE , MY NAME IS ${a.name} my age is ${a.age}`);
+              console.log(a.name,a.age);
+            }
+            s(a);
+            console.log(a.name);
+            console.log(`HII EVERY ONE , MY NAME IS ${a.name} my age is ${a.age}`);
+    </pre>
+        <pre>
+          <h2>OUTPUT</h2>
+          { name: 'riya', age: '23' }
+          HII EVERY ONE , MY NAME IS riya my age is 23
+          riya 23
+          riya
+          HII EVERY ONE , MY NAME IS riya my age is 23
+        </pre>
+
+        <h1>Q2 - Write code to explain prototype chaining</h1>
+ <H3>ANS</H3>
+
+        <pre>
+          let call1={
+            fname:"riya"
+       }
+       let call2={
+           lname:"raj",
+           proto:call1
+       }
+       console.log(`HII I AM ${call2.proto.fname} ${call2.lname} `);
+       // console.log(call2,call2.proto.fname);
+       let call3={
+           from :"Salem",
+            set:function(){
+             d = "time is too precious"
+             return d
+               //  console.log(d)
+               }
+        }
+       console.log(`HII I AM ${call2.proto.fname} ${call2.lname} from ${call3.from} ${call3.set()}`);
+
+        let call4={
+            work : "so work hard"
+        }
+         
+           let c3 = call3.set()
+       console.log(`HII I AM ${call2.proto.fname} ${call2.lname} from ${call3.from} ${c3}  ${call4.work}`);
+        </pre>
+        <pre>
+          <h2>OUTPUT</h2>
+            HII I AM riya raj 
+            HII I AM riya raj from Salem time is too precious
+            HII I AM riya raj from Salem time is too precious  so work hard
+            </pre>
+
+
+            <h1>:Add a method to calculate sum of all elements in Array in array's
+              protype, use that method to calculate sum for multiple arrays
+  </h1>
+  <H3>ANS</H3>
+  <pre>
+    let array=[1,2,3,4,5,20,10,5];
+    let sum=0;
+    for(let i=0;i < array.length;i++){
+       sum+=array[i];
+    }
+    let call={
+       addarray:array
+    }
+    console.log(sum);
+  </pre>
+  <pre>
+    <h2>OUTPUT</h2>
+    50</pre>
+    <h1>Write a JavaScript function to retrieve all the names of object's own
+      and inherited properties.
+</h1>
+<pre>
+        let num=[1,2,6,10,30]
+        let results = num.reduce((fin,otp)=>{
+            fin *= otp;
+            return fin
+        },1)
+        console.log(results);
+</pre>
+<pre>
+  <h2>OUTPUT</h2>
+  3600</pre>
+</body>
+</html>
